@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 import com.properties.bean.DataSource;
+import com.properties.bean.JMS;
 
 @SpringBootApplication
 public class SpringPropertiesApplication {
@@ -17,5 +18,10 @@ public class SpringPropertiesApplication {
 		System.out.println(dataSource.getUserName());
 		System.out.println(dataSource.getPassword());
 		System.out.println(dataSource.getUrl());
+		
+		JMS jms=(JMS)ctx.getBean(JMS.class);
+		System.out.println(jms.getUserName());
+		System.out.println(jms.getPassword());
+		System.out.println(jms.getUrl());
 	}
 }
