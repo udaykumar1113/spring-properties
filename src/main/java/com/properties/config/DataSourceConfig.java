@@ -11,11 +11,6 @@ import com.properties.bean.DataSource;
 import com.properties.bean.JMS;
 
 @Configuration
-//@PropertySource({"classpath:jms.properties","classpath:datasource.properties"})
-@PropertySources({ 
-	                @PropertySource("classpath:jms.properties") ,
-	                @PropertySource("classpath:datasource.properties")
-	            })
 public class DataSourceConfig {
 	
 	@Value("${spring.datasource.username}")//the values from properties file will be loaded here
@@ -54,12 +49,4 @@ public class DataSourceConfig {
 		jms.setUrl(jms_url);
 		return jms;
 	}
-	
-	//This will bring in properties file values here, if this is not defined values will not be available
-    @Bean
-    public static PropertySourcesPlaceholderConfigurer properties(){
-        PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer =
-        		new PropertySourcesPlaceholderConfigurer();
-        return  propertySourcesPlaceholderConfigurer;
-    }
 }
