@@ -4,13 +4,18 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.PropertySources;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 import com.properties.bean.DataSource;
 import com.properties.bean.JMS;
 
 @Configuration
-@PropertySource({"classpath:datasource.properties","classpath:jms.properties"})
+//@PropertySource({"classpath:jms.properties","classpath:datasource.properties"})
+@PropertySources({ 
+	                @PropertySource("classpath:jms.properties") ,
+	                @PropertySource("classpath:datasource.properties")
+	            })
 public class DataSourceConfig {
 	
 	@Value("${spring.datasource.username}")//the values from properties file will be loaded here
