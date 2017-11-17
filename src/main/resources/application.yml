@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/springboot?useSSL=false--yml
+    username: root--yml
+    password: mysql--yml
+  jms:
+    url: http://localhost:4847--yml
+    username: JMS_USER--yml
+    password: JMS_PASSWORD--yml
